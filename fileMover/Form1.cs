@@ -56,10 +56,9 @@ namespace fileMover
                 {
                     for (int index = 0; index < libFileNames.Length - 1; index++)
                     {
-                        if (string.Compare(libFileNames[index], line) == 0)
+                        if (string.Compare(libFileNames[index], line.Trim()) == 0)
                         {
                             string targetpath = string.Concat(outputFolderDir.Text, "\\", libFileNames[index], libFileExtension[index]);
-                            //MessageBox.Show(targetpath);
                             File.Copy(libFilePath[index], targetpath);
                         }
                     }
