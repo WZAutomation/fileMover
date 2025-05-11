@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             targetFileNames = new TextBox();
             libFolderDir = new TextBox();
             outputFolderDir = new TextBox();
@@ -69,7 +70,6 @@
             libFolderLbl.Size = new Size(76, 15);
             libFolderLbl.TabIndex = 3;
             libFolderLbl.Text = "LibraryFolder";
-            //libFolderLbl.Click += label1_Click;
             // 
             // outputFolderLbl
             // 
@@ -123,8 +123,10 @@
             Controls.Add(outputFolderDir);
             Controls.Add(libFolderDir);
             Controls.Add(targetFileNames);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "Form1";
-            Text = "Form1";
+            Text = "fileMover";
+            Load += Form1_Load;
             ResumeLayout(false);
             PerformLayout();
         }

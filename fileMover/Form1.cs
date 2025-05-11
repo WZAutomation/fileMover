@@ -34,6 +34,8 @@ namespace fileMover
 
             string[] outputFilePath = [];
 
+            int fileCopyNum = 0;
+
             if (Directory.Exists(outputFolderDir.Text))
             {
                 outputFilePath = Directory.GetFiles(outputFolderDir.Text);
@@ -56,15 +58,23 @@ namespace fileMover
                 {
                     for (int index = 0; index < libFileNames.Length - 1; index++)
                     {
-                        if (string.Compare(libFileNames[index], line) == 0)
+                        if (string.Compare(libFileNames[index], line.Trim()) == 0)
                         {
                             string targetpath = string.Concat(outputFolderDir.Text, "\\", libFileNames[index], libFileExtension[index]);
-                            //MessageBox.Show(targetpath);
                             File.Copy(libFilePath[index], targetpath);
+
+                            fileCopyNum ++;
                         }
                     }
                 }
             }
+
+            MessageBox.Show(string.Concat(fileCopyNum.ToString(), " files moved successfully."), "Files moved", MessageBoxButtons.OK);
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
