@@ -33,6 +33,7 @@
             aboutInfo = new Label();
             sourceLink = new LinkLabel();
             commitNum = new Label();
+            wzautomationurl = new LinkLabel();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
@@ -51,14 +52,14 @@
             aboutInfo.AutoSize = true;
             aboutInfo.Location = new Point(12, 270);
             aboutInfo.Name = "aboutInfo";
-            aboutInfo.Size = new Size(264, 90);
+            aboutInfo.Size = new Size(264, 120);
             aboutInfo.TabIndex = 1;
-            aboutInfo.Text = "fileMover tool made for Vanderlande Hong Kong\r\nInternational Airport 3RS project.\r\n\r\nRelease Version:\r\n\r\nSource:";
+            aboutInfo.Text = "fileMover tool made for Vanderlande Hong Kong\r\nInternational Airport 3RS project.\r\n\r\nRelease Version:\r\n\r\nContact: \r\n\r\nSource:";
             // 
             // sourceLink
             // 
             sourceLink.AutoSize = true;
-            sourceLink.Location = new Point(57, 345);
+            sourceLink.Location = new Point(54, 375);
             sourceLink.Name = "sourceLink";
             sourceLink.Size = new Size(251, 15);
             sourceLink.TabIndex = 2;
@@ -71,15 +72,27 @@
             commitNum.AutoSize = true;
             commitNum.Location = new Point(100, 316);
             commitNum.Name = "commitNum";
-            commitNum.Size = new Size(38, 15);
+            commitNum.Size = new Size(102, 15);
             commitNum.TabIndex = 3;
             commitNum.Text = "VERSIONNUMBER";
+            // 
+            // wzautomationurl
+            // 
+            wzautomationurl.AutoSize = true;
+            wzautomationurl.Location = new Point(60, 345);
+            wzautomationurl.Name = "wzautomationurl";
+            wzautomationurl.Size = new Size(185, 15);
+            wzautomationurl.TabIndex = 4;
+            wzautomationurl.TabStop = true;
+            wzautomationurl.Text = "https://www.wzautomation.com/";
+            wzautomationurl.LinkClicked += WzautomationurlLinkClicked;
             // 
             // AboutPopUp
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(342, 420);
+            Controls.Add(wzautomationurl);
             Controls.Add(commitNum);
             Controls.Add(sourceLink);
             Controls.Add(aboutInfo);
@@ -91,12 +104,12 @@
             ResumeLayout(false);
             PerformLayout();
         }
-
         #endregion
 
         private PictureBox pictureBox1;
         private Label aboutInfo;
         private LinkLabel sourceLink;
         private Label commitNum;
+        private LinkLabel wzautomationurl;
     }
 }

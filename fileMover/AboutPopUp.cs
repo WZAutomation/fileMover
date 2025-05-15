@@ -27,5 +27,14 @@ namespace fileMover
 
             System.Diagnostics.Process.Start(browserprocess);
         }
+
+        private void WzautomationurlLinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            ProcessStartInfo browserprocess = new ProcessStartInfo();
+            browserprocess.FileName = wzautomationurl.Text;
+            browserprocess.UseShellExecute = true;
+
+            System.Diagnostics.Process.Start(browserprocess);
+        }
     }
 }
