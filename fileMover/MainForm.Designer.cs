@@ -1,6 +1,6 @@
 ﻿namespace fileMover
 {
-    partial class Form1
+    partial class MainForm
     {
         /// <summary>
         ///  Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             targetFileNames = new TextBox();
             libFolderDir = new TextBox();
             outputFolderDir = new TextBox();
@@ -37,6 +37,7 @@
             libFolderBrowseBtn = new Button();
             outputFolderBrowseBtn = new Button();
             moveFiles = new Button();
+            aboutPopUp = new Button();
             SuspendLayout();
             // 
             // targetFileNames
@@ -110,11 +111,22 @@
             moveFiles.UseVisualStyleBackColor = true;
             moveFiles.Click += moveFileBtn_Clk;
             // 
+            // aboutPopUp
+            // 
+            aboutPopUp.Location = new Point(558, 480);
+            aboutPopUp.Name = "aboutPopUp";
+            aboutPopUp.Size = new Size(75, 23);
+            aboutPopUp.TabIndex = 8;
+            aboutPopUp.Text = "About";
+            aboutPopUp.UseVisualStyleBackColor = true;
+            aboutPopUp.Click += aboutPopUpBtn_Clk;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(645, 515);
+            Controls.Add(aboutPopUp);
             Controls.Add(moveFiles);
             Controls.Add(outputFolderBrowseBtn);
             Controls.Add(libFolderBrowseBtn);
@@ -126,7 +138,8 @@
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "Form1";
             Text = "fileMover";
-            Load += Form1_Load;
+            FormClosing += autoSaveTargetFileList;
+            Load += autoLoadTargetFileList;
             ResumeLayout(false);
             PerformLayout();
         }
@@ -141,5 +154,6 @@
         private Button libFolderBrowseBtn;
         private Button outputFolderBrowseBtn;
         private Button moveFiles;
+        private Button aboutPopUp;
     }
 }
